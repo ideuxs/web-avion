@@ -1,0 +1,8 @@
+#message{
+    border : 1px solid black;
+    text-align: center;
+}
+
+#message p{
+    font-size: 35px;
+}
