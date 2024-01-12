@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;500&display=swap');
 
-
 body{
   margin: 0;
   background-color: beige;
@@ -113,7 +112,7 @@ body{
 }
 
 
-/*
+
 .custom-popup .leaflet-popup-content-wrapper {
   background:#2c3e50;
   color:#fff;
@@ -131,12 +130,254 @@ body{
   border-left:15px solid transparent;
   border-right:15px solid transparent;
   border-top:15px solid #4d8dcd;
-}*/
-
-
-.responsive-menu {
-  display: none;
 }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+a {
+    text-decoration: 0;
+}
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 9px;
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+}
+body {
+    background-color: #111;
+}
+section {
+    margin-top: 50px;
+}
+
+header {
+    background-color: #222;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    padding: 0 5%;
+
+}
+header  .logo a {
+    font-size: 25px;
+    color: #29d9d5;
+ 
+}
+header  .logo a span {
+    color: #fff;
+}
+.menu {
+    display: flex;
+    align-items: center;
+}
+.menu li  {
+    margin: 0 15px;
+    list-style-type: none;
+}
+.menu li a {
+    color: #fff;
+    font-size: 14px;
+}
+
+
+
+
+.btn-reservation {
+    color: #29d9d5;
+    font-size: 14px;
+    border: 2px solid #29d9d5;
+    padding: 5px 20px;
+    transition: 0.5s;
+    font-weight: bolder;
+}
+.btn-reservation:hover {
+    background-color: #29d9d5;
+    color: #fff;
+ 
+}
+
+/* Home acceuil CSS */
+
+#home {
+    background: linear-gradient(rgba(0,0,0,0.1),#333);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+#home h2 {
+    font-size: 45px;
+    margin-bottom: 10px;
+    -webkit-text-stroke: #fff 0.02px;
+    color: transparent;
+    text-transform: lowercase;
+}
+#home h4 {
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+#home p {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+.home-btn {
+    margin-bottom: 20px;
+}
+
+.find_trip {
+    background-color: #222;
+    padding: 20px;
+    width: 70%;
+    position: absolute;
+    bottom: -50px;
+}
+.find_trip form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+}
+.find_trip form div , .find_trip form input[type="submit"]{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+.find_trip form label {
+    color: #999;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.find_trip form input {
+    padding: 5px 20px;
+    background-color: transparent;
+    border: 1px solid #29d9d5;
+    outline: 0;
+    width: 100%;
+    font-size: 13px;
+    color: #fff;
+}
+.find_trip form input[type="submit"] {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: #29d9d5;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.find_trip form input[type="submit"]:hover {
+    box-shadow: 0 0 10px #29d9d5;
+}
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+footer {
+  width: 100%;
+  background-color: #222;
+  padding: 10px 0;
+  font-size: 14px;
+  text-align: center;
+}
+footer p {
+  color: #fff;
+}
+footer p span {
+  color: #29d9d5;
+}
+
+/* Contact CSS */
+#contact {
+  padding: 0 10%;
+  margin-bottom: 50px;
+  height: 90vh;
+}
+#contact form {
+  background-color: #fff;
+  margin:auto;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.left-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.left-right .left , .left-right .right  {
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+}
+#contact form label {
+  font-size: 14px;
+  padding: 10px 0;
+  font-weight: 600
+}
+#contact form input {
+  padding: 8px;
+  outline: 0;
+  border: 1px solid #999;
+}
+
+textarea {
+  height: 150px;
+  resize: none;
+  outline: 0;
+  width: 100%;
+  padding: 10px;
+}
+#contact form input:focus , textarea:focus {
+  border: 1px solid #29d9d5;
+}
+iframe {
+  height: 150px;
+  width: 100%;
+}
+#contact button {
+  width: fit-content;
+  padding: 8px 40px;
+  background-color: #111;
+  border: 1px solid #111;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.5s;
+}
+#contact button:hover {
+  letter-spacing: 1px;
+}
+
+
+
+
+/*Responsive*/
 @media (max-width:750px) {
   header .menu {
       display: none;
@@ -207,21 +448,21 @@ body{
       position: absolute;
       content: "";
       height: 3px;
-      background-color: #e0cda9;
+      background-color: #29d9d5;
       width: 28px;
-      box-shadow: 0 10px 0 #e0cda9;
+      box-shadow: 0 10px 0 #29d9d5;
       transform: translateY(-10px);
       transition: 0.5s;
   }
   .responsive-menu.active::after {
-      box-shadow: 0 0 0 #e0cda9; 
+      box-shadow: 0 0 0 #29d9d5; 
       transform: rotate(45deg);
   }
   .responsive-menu::before {
       position: absolute;
       content: "";
       height: 3px;
-      background-color: #e0cda9;
+      background-color: #29d9d5;
       width: 28px;
       transform: translateY(10px);
       transition: 0.5s;
@@ -255,60 +496,3 @@ body{
   }
 }
 
-.menu {
-  display: flex;
-  align-items: center;
-}
-.menu li  {
-  margin: 0 15px;
-  list-style-type: none;
-}
-.menu li a {
-  color: #fff;
-  font-size: 14px;
-}
-.menu li a:hover {
-  color: #e0cda9; /* Changez cette couleur en celle que vous préférez */
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #ccc;
-}
-body {
-  overflow-x: hidden;
-  background-color: #111;
-  background: linear-gradient(to bottom, #000000, #365359, #e3a988);
-}
-section {
-  margin-top: 50px;
-}
-
-header {
-  background-color: rgb(87, 47, 27);
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 80px;
-  padding: 0 20%;
-  z-index: 1001;
-  
-}
-
-header  .logo a {
-  font-size: 25px;
-  color: #e0cda9;
-
-}
-header  .logo a span {
-  color: #fff;
-}
-
-.menu #accueil{
-  font-size: 25px;
-}

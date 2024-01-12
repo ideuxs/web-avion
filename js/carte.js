@@ -3,6 +3,7 @@ var map;
 
 $(document).ready(function(){
     init();
+   
 });
 
 
@@ -19,16 +20,18 @@ function init() {
 
         getAircraftData();
         // Actualiser toutes les 5 secondes
-        //setInterval(getAircraftData, 5000);
+        setInterval(getAircraftData, 10000);
     } else {
         console.error('Map container not found.');
     }
 }
 
+
 function getAircraftData() {
+    //45a17dcc-aebe-42f4-b650-97053dd9096e
     tab = []; 
     $.ajax({
-        url: `https://airlabs.co/api/v9/flights?&api_key=45a17dcc-aebe-42f4-b650-97053dd9096e`,
+        url: `https://airlabs.co/api/v9/flights?&api_key=c8afdab6-0b87-4565-bfb5-939727e3e803`,
         method: 'GET',
         success: function (data) {
             tab = data.response;
@@ -38,9 +41,8 @@ function getAircraftData() {
                 }
             });
 
-            for (var i = 0; i < 100; i++) {
+            for (var i = 0; i < 300; i++) {
                 var aircraft = tab[i];
-
                 var icon = L.divIcon({
                     className: 'custom-div-icon',
                     html: '<img src="image/icon.svg" height="25px" style="transform: rotate(' + aircraft.dir + 'deg);">',
@@ -55,6 +57,7 @@ function getAircraftData() {
 
                 getDepartureAirportInfo(aircraft.dep_iata, marker);
                 getAirportInfo(aircraft.arr_iata, marker);
+                
             }
         },
         error: function (error) {
@@ -92,3 +95,48 @@ function getDepartureAirportInfo(iataCode, marker) {
 }
 
 
+function toggleDiv(divId) {
+    var div = document.getElementById(divId);
+    var toggledRadio = document.getElementById(divId + 'Toggle');
+
+    // Masquer toutes les divs
+    var allDivs = document.querySelectorAll('div[id^="div"]');
+    allDivs.forEach(function (d) {
+        d.classList.add('hidden');
+    });
+
+    // Afficher la div correspondante au bouton radio sélectionné
+    if (toggledRadio.checked) {
+        div.classList.remove('hidden');
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    var title = document.querySelector("#home h2");
+
+    // Tableau de textes alternatifs
+    var titles = ["WELCOME TO", "BIENVENUE CHEZ "];
+    var currentIndex = 0;
+
+    // Fonction pour mettre à jour le texte du titre
+    function updateTitle() {
+        title.textContent = titles[currentIndex];
+        currentIndex = (currentIndex + 1) % titles.length;
+    }
+
+    // Mettez à jour le titre toutes les 5 secondes
+    setInterval(updateTitle, 5000);
+
+    // Appelez la fonction pour initialiser le titre
+    updateTitle();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    var toggle_menu = document.querySelector(".responsive-menu");
+    var menu = document.querySelector(".menu");
+
+    toggle_menu.onclick = function () {
+        toggle_menu.classList.toggle("active");
+        menu.classList.toggle("responsive");
+    };
+}); 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/index.css" rel="stylesheet" />
-
+    <link rel="icon" href="image/airtracking.png" type="image/x-icon">
     <title>Inscription</title>
 </head>
 
@@ -21,10 +21,11 @@
         }
     ?>
 
-    <div id = "message">Bienvenu(e) sur la page d'inscription !</div>
 
     <div id = "formulaire">
         <form method="POST" action="traitement.php">
+        <h2>Bienvenu(e) sur la page d'inscription !</h2>
+
             <br><br>
             <label for = "nom">Votre nom</label><br>
             <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required><br><br>
@@ -43,6 +44,13 @@
             <a href = "./login.php">Se connecter</a>
 
         </form>
+
+
+        <div class="drop drop-1"></div>
+        <div class="drop drop-2"></div>
+        <div class="drop drop-3"></div>
+        <div class="drop drop-4"></div>
+        <div class="drop drop-5"></div>
     </div>
 </body>
 

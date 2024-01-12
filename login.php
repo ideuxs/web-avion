@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/login.css" rel="stylesheet" />
+    <link rel="icon" href="image/airtracking.png" type="image/x-icon">
     <title>Se connecter</title>
 </head>
 
@@ -47,33 +48,31 @@
                 }
             }
         }
-
     ?>
 
-    <div id = "message">Bienvenu(e) sur la page de connexion !</div>
 
-    <div id = "formulaire">
+<div id = "formulaire">
         <form method="POST" action="">
-            <br><br>
+        <h2>Bienvenue sur la page de connexion !</h2>
+
+            <br>
             <label for = "pseudo">Pseudo</label><br><br>
-            <input type="text" placeholder="Votre pseudo" id="pseudo" name="pseudo" required><br><br><br>
+            <input type="text" placeholder="Votre pseudo" id="pseudo" name="pseudo" required><br>
 
             <label for = "password">Mot de Passe</label><br><br>
             <input type="password" placeholder="Votre mot de passe..." id="password" name="password" required><br><br><br>
 
-            <input id ="envoyer"type="submit" value="Se connecter" name="ok"><br><br><br>
+            <input id ="envoyer"type="submit" value="Se connecter" name="ok"><br>
 
             <a href = "./index.php">S'inscrire</a>
-
-            <?php
-                if($error_msg){
-                    echo '<p>' . $error_msg . '</p>';
-                }
-            ?>
-
         </form>
-    </div>
 
+  <div class="drop drop-1"></div>
+  <div class="drop drop-2"></div>
+  <div class="drop drop-3"></div>
+  <div class="drop drop-4"></div>
+  <div class="drop drop-5"></div>
+</div>
     
 
         
